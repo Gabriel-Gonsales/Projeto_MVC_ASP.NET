@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Exemplo MVC";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Sistema de livraria</h1>
+    <p>Tabela de livros.</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var livro in Model.Livros)
+            {
+                <tr>
+                    <td>@livro.Titulo</td>
+                    <td>@livro.Autor</td>
+                    <td>@livro.Preco.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
